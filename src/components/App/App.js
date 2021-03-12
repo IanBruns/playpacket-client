@@ -1,6 +1,8 @@
 import { Route, Switch } from 'react-router';
-import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import './App.css';
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
+import LoginPage from '../../routes/LoginPage/LoginPage';
+import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 
 function App() {
   return (
@@ -11,6 +13,14 @@ function App() {
       <main>
         <h2>
           <Switch>
+            <Route
+              path={'/login'}
+              component={LoginPage}
+            />
+            <Route
+              path={'/register'}
+              component={RegistrationPage}
+            />
             <Route
               component={NotFoundPage}
             />
