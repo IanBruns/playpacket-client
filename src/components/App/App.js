@@ -3,6 +3,7 @@ import './App.css';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import LoginPage from '../../routes/LoginPage/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
+import PublicOnlyRoute from '../../utilities/PublicOnlyRoute';
 
 function App() {
   return (
@@ -13,11 +14,11 @@ function App() {
       <main>
         <h2>
           <Switch>
-            <Route
+            <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}
             />
-            <Route
+            <PublicOnlyRoute
               path={'/register'}
               component={RegistrationPage}
             />
