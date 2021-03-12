@@ -28,6 +28,7 @@ function App() {
             <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}
+              whenLoggedIn={whenLoggedIn}
             />
             <PublicOnlyRoute
               path={'/register'}

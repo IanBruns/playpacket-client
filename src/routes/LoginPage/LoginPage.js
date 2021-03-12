@@ -6,7 +6,7 @@ export default function LoginPage(props) {
     return (
         <div className='sign-in'>
             <h2>Sign in</h2>
-            <LoginForm />
+            <LoginForm whenLoggedIn={props.whenLoggedIn} />
             <p>
                 Don't have an account? <br />
                 <Link to='/register'>Sign up</Link>
