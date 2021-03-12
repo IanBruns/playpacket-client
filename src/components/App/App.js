@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Route, Switch } from 'react-router';
 import './App.css';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
@@ -6,6 +7,16 @@ import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import PublicOnlyRoute from '../../utilities/PublicOnlyRoute';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  function whenLoggedIn() {
+    setIsLoggedIn(true);
+  }
+
+  function whenLoggedOut() {
+    setIsLoggedIn(false);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
