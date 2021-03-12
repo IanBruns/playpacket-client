@@ -5,6 +5,7 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import LoginPage from '../../routes/LoginPage/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import PublicOnlyRoute from '../../utilities/PublicOnlyRoute';
+import Header from '../Header/Header';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,7 +21,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Header, Baby</h1>
+        <Header
+          whenLoggedOut={whenLoggedOut}
+          isLoggedIn={isLoggedIn}
+        />
       </header>
       <main>
         <h2>
