@@ -40,7 +40,7 @@ function Header(props) {
             <Link to='/home'>
                 <h1>Play Packet</h1>
             </Link>
-            {TokenService.hasAuthToken()
+            {props.isLoggedin
                 ? renderLogoutLink()
                 : renderLoginLink()}
         </nav>
