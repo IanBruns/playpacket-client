@@ -30,30 +30,28 @@ function App() {
         />
       </header>
       <main>
-        <h2>
-          <Switch>
-            <Route
-              path exact='/'
-              component={LandingPage}
-            />
-            <PublicOnlyRoute
-              path={'/login'}
-              component={LoginPage}
-              whenLoggedIn={whenLoggedIn}
-            />
-            <PublicOnlyRoute
-              path={'/register'}
-              component={RegistrationPage}
-            />
-            <PrivateRoute
-              path={'/home'}
-              component={HomePage}
-            />
-            <Route
-              component={NotFoundPage}
-            />
-          </Switch>
-        </h2>
+        <Switch>
+          <Route
+            exact path='/'
+            component={LandingPage}
+          />
+          <PublicOnlyRoute
+            path={'/login'}
+            component={LoginPage}
+            whenLoggedIn={whenLoggedIn}
+          />
+          <PublicOnlyRoute
+            path={'/register'}
+            component={RegistrationPage}
+          />
+          <PrivateRoute
+            path={'/home'}
+            component={HomePage}
+          />
+          <Route
+            component={NotFoundPage}
+          />
+        </Switch>
       </main>
 
     </div>

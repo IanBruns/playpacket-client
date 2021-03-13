@@ -4,20 +4,14 @@ import AuthApiService from '../../services/auth-api-service';
 
 export default function LoginForm(props) {
     const [loading, setLoading] = useState(false);
-
-    function onLoginSuccess() {
-        props.whenLoggedIn();
-
-        const { location, history } = props;
-        const destination = (location.state || {}).from || '/home';
-        history.push(destination);
-    }
+    const [error, setError] = useState(null)
 
     function handleSubmitJwtAuth(e) {
         e.preventDefault();
         const { user_name, password } = e.target;
 
         setLoading(true);
+        setError(null);
 
         AuthApiService.postLogin({
             user_name: user_name.value,
@@ -28,17 +22,22 @@ export default function LoginForm(props) {
                 password.value = '';
                 TokenService.saveAuthToken(res.authToken);
                 setLoading(false);
-                onLoginSuccess();
+                props.whenLoggedIn();
+                props.onLoginSuccess();
             })
-            .catch(res => {
+            .catch(err => {
                 setLoading(false);
-                alert(res.error);
+                setError(err);
             })
     }
     return (
         <form className='sign-in-form'
             onSubmit={(e) => handleSubmitJwtAuth(e)}
         >
+            {error &&
+                (
+                    <p>There was an error</p>
+                )}
             <div className='form-options'>
                 <label htmlFor='user_name'>Username</label>
                 <br />
