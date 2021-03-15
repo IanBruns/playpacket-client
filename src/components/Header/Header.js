@@ -40,7 +40,8 @@ function Header(props) {
             <Link to='/home'>
                 <h1>Play Packet</h1>
             </Link>
-            {props.isLoggedin
+
+            {(props.isLoggedin === true)
                 ? renderLogoutLink()
                 : renderLoginLink()}
         </nav>

@@ -10,7 +10,7 @@ export default function LoginPage(props) {
     return (
         <div className='sign-in'>
             <h2>Sign in</h2>
-            <LoginForm whenLoggedIn={props.whenLoggedIn}
+            <LoginForm whenLoggedIn={() => props.whenLoggedIn()}
                 onLoginSuccess={onLoginSuccess} />
             <p>
                 Don't have an account? <br />
