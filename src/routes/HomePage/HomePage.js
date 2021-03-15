@@ -1,18 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import HomeOptions from '../../components/HomeOptions/HomeOptions';
 
 export default function HomePage(props) {
     const options = ['Rules', 'Search', 'Add'].map((field, i) => {
         return (
-            <>
-                <div className={'option'} key={i}>
-                    <Link to={`${field}`}>
-                        <p>
-                            {field}
-                        </p>
-                    </Link>
-                </div>
-            </>
+            <HomeOptions field={field} />
         )
     })
 
