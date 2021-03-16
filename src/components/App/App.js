@@ -38,23 +38,23 @@ function App() {
             component={LandingPage}
           />
           <PublicOnlyRoute
-            path={'/Login'}
+            path='/Login'
             component={LoginPage}
             whenLoggedIn={whenLoggedIn}
           />
           <PublicOnlyRoute
-            path={'/Register'}
+            path='/Register'
             component={RegistrationPage}
           />
           <PrivateRoute
-            path={'/Home'}
+            path='/Home'
             component={HomePage}
           />
           <PrivateRoute
-            path={'/MyRules'}
+            path='/MyRules'
             component={RulesPage} />
           <PrivateRoute
-            path='Rules/:game_id'
+            path='Rules/:gameId'
             component={GamesRulesPage}
           />
           <Route
