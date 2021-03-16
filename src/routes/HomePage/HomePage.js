@@ -2,7 +2,7 @@ import React from 'react';
 import HomeOptions from '../../components/HomeOptions/HomeOptions';
 
 export default function HomePage(props) {
-    const options = ['Rules', 'Search', 'Add'].map((field, i) => {
+    const options = ['MyRules', 'Search', 'Add'].map((field, i) => {
         return (
             <HomeOptions field={field} key={i} />
         )

@@ -10,6 +10,7 @@ import PublicOnlyRoute from '../../utilities/PublicOnlyRoute';
 import Header from '../Header/Header';
 import HomePage from '../../routes/HomePage/HomePage';
 import RulesPage from '../../routes/RulesPage/RulesPage';
+import GamesRulesPage from '../../routes/GameRulesPage/GameRulesPage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -50,8 +51,12 @@ function App() {
             component={HomePage}
           />
           <PrivateRoute
-            path={'/Rules'}
+            path={'/MyRules'}
             component={RulesPage} />
+          <PrivateRoute
+            path='Rules/:game_id'
+            component={GamesRulesPage}
+          />
           <Route
             component={NotFoundPage}
           />
