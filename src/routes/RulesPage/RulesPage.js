@@ -12,7 +12,7 @@ export default function RulesPage(props) {
 
     const gameOptions = games.map(game => {
         return (
-            <p>{game.game_name}</p>
+            <p key={game.id}>{game.game_name}</p>
         )
     })
 
