@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import RulesOptions from '../../components/RulesOptions/RulesOptions';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function RulesPage(props) {
@@ -12,7 +13,7 @@ export default function RulesPage(props) {
 
     const gameOptions = games.map(game => {
         return (
-            <p key={game.id}>{game.game_name}</p>
+            <RulesOptions key={game.id} name={game.game_name} />
         )
     })
 
