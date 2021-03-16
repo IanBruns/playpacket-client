@@ -9,6 +9,7 @@ import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import PublicOnlyRoute from '../../utilities/PublicOnlyRoute';
 import Header from '../Header/Header';
 import HomePage from '../../routes/HomePage/HomePage';
+import RulesPage from '../../routes/RulesPage/RulesPage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,18 +37,21 @@ function App() {
             component={LandingPage}
           />
           <PublicOnlyRoute
-            path={'/login'}
+            path={'/Login'}
             component={LoginPage}
             whenLoggedIn={whenLoggedIn}
           />
           <PublicOnlyRoute
-            path={'/register'}
+            path={'/Register'}
             component={RegistrationPage}
           />
           <PrivateRoute
-            path={'/home'}
+            path={'/Home'}
             component={HomePage}
           />
+          <PrivateRoute
+            path={'/Rules'}
+            component={RulesPage} />
           <Route
             component={NotFoundPage}
           />
