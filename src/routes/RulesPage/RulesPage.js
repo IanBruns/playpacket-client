@@ -13,14 +13,16 @@ export default function RulesPage(props) {
 
     const gameOptions = games.map(game => {
         return (
-            <RulesOptions key={game.id} name={game.game_name} />
+            <RulesOptions key={game.id} id={game.id} name={game.game_name} />
         )
     })
 
     return (
-        <>
+        <div className='RulesPage'>
             <h2>RulesPage!</h2>
-            {gameOptions}
-        </>
+            <div className='gameSelect'>
+                {gameOptions}
+            </div>
+        </div>
     )
 }
