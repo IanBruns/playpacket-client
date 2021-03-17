@@ -11,6 +11,7 @@ import Header from '../Header/Header';
 import HomePage from '../../routes/HomePage/HomePage';
 import RulesPage from '../../routes/RulesPage/RulesPage';
 import GamesRulesPage from '../../routes/GameRulesPage/GameRulesPage';
+import SearchPage from '../../routes/SearchPage/SearchPage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -59,7 +60,7 @@ function App() {
           />
           <PrivateRoute
             path='/Search'
-            component={NotFoundPage}
+            component={SearchPage}
           />
           <Route
             component={NotFoundPage}
