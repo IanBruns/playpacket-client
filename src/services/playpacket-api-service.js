@@ -25,7 +25,19 @@ const PlayPacketApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
-    }
+    },
+    getUserGameRules(game_id) {
+        return fetch(`${config.API_ENDPOINT}/rules/games/${game_id}`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
 }
 
 export default PlayPacketApiService;
