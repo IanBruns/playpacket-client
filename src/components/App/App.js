@@ -55,7 +55,7 @@ function App() {
             path='/MyRules'
             component={RulesPage} />
           <PrivateRoute
-            path='Rules/:gameId'
+            path='/Rules/:gameId'
             component={GamesRulesPage}
           />
           <PrivateRoute
