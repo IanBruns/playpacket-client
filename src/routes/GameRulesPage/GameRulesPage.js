@@ -47,13 +47,15 @@ export default function GamesRulesPage(props) {
                     <div className='form-options'>
                         <label htmlFor='rule_title'>Rule Title</label>
                         <br />
-                        <input type='text' placeholder='Enter Rule Title' name='rule_title' />
+                        <input type='text' placeholder='Enter Rule Title' name='rule_title'
+                            value={rule_title} onChange={e => setRule_title(e.target.value)} />
                     </div>
                     <div className='form-options'>
                         <label htmlFor='rule_description'>Rule Description*</label>
                         <br />
                         <input type='text' placeholder='Enter Rule Description'
-                            name='rule_description' required />
+                            name='rule_description' required
+                            value={rule_description} onChange={e => setRule_description(e.target.value)} />
                     </div>
                     <button type="submit" className='myButton'
                         disabled={loading}>
