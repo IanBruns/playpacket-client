@@ -57,6 +57,10 @@ function App() {
             path='Rules/:gameId'
             component={GamesRulesPage}
           />
+          <PrivateRoute
+            path='/Search'
+            component={NotFoundPage}
+          />
           <Route
             component={NotFoundPage}
           />
