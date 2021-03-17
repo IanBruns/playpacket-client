@@ -12,6 +12,7 @@ import HomePage from '../../routes/HomePage/HomePage';
 import RulesPage from '../../routes/RulesPage/RulesPage';
 import GamesRulesPage from '../../routes/GameRulesPage/GameRulesPage';
 import SearchPage from '../../routes/SearchPage/SearchPage';
+import ResultsPage from '../../routes/ResultsPage/ResultsPage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -61,6 +62,10 @@ function App() {
           <PrivateRoute
             path='/Search'
             component={SearchPage}
+          />
+          <PrivateRoute
+            path='/Results/:gameId'
+            component={ResultsPage}
           />
           <Route
             component={NotFoundPage}
