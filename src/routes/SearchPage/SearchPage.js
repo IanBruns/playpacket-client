@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import GameSearchSelect from '../../components/GameSearchSelect/GameSearchSelect';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function SearchPage(props) {
@@ -17,7 +18,8 @@ export default function SearchPage(props) {
 
     const games = filterGames.map(game => {
         return (
-            <p key={game.id}>{game.game_name}</p>
+            <GameSearchSelect key={game.id} game_name={game.game_name} />
+            // <p key={game.id}>{game.game_name}</p>
         )
     })
 
