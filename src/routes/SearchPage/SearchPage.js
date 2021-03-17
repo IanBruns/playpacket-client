@@ -9,7 +9,7 @@ export default function SearchPage(props) {
             .then(games => {
                 setAllGames(games);
             })
-    })
+    }, [])
 
     const filterGames = allGames.filter(game => {
         return game.game_name.toLowerCase().includes(search.toLowerCase());
