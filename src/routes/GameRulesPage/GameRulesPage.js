@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function GamesRulesPage(props) {
+    const [adding, setAdding] = useState(false);
     const [name, setName] = useState('')
     const [rules, setRules] = useState([]);
     useEffect(() => {
@@ -25,6 +26,14 @@ export default function GamesRulesPage(props) {
         <div className='GamesRulesPage'>
             <h2>Rules For: {name}</h2>
             {mapRules}
+
+            <button onClick={() => setAdding(!adding)}>
+                Add
+            </button>
+
+            {adding && (
+                <p>Adding!</p>
+            )}
         </div>
     )
 }
