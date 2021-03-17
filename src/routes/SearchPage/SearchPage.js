@@ -18,8 +18,8 @@ export default function SearchPage(props) {
 
     const games = filterGames.map(game => {
         return (
-            <GameSearchSelect key={game.id} game_name={game.game_name} />
-            // <p key={game.id}>{game.game_name}</p>
+            <GameSearchSelect key={game.id} id={game.id}
+                game_name={game.game_name} />
         )
     })
 
