@@ -9,7 +9,7 @@ export default function RulesPage(props) {
             .then(userGames => {
                 setGames(userGames);
             })
-    })
+    }, [])
 
     const gameOptions = games.map(game => {
         return (
