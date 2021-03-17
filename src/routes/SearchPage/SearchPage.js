@@ -19,6 +19,11 @@ export default function SearchPage(props) {
     return (
         <div className='SearchPage'>
             <h2>SearchPage!</h2>
+            <form className='game-search'>
+                <label htmlFor='game'>Seach by Game Name:</label>
+                <br />
+                <input type='text' name='game-search' />
+            </form>
             {games}
         </div>
     )
