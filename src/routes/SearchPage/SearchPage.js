@@ -11,7 +11,11 @@ export default function SearchPage(props) {
             })
     })
 
-    const games = allGames.map(game => {
+    const filterGames = allGames.filter(game => {
+        return game.game_name.toLowerCase().includes(search.toLowerCase());
+    })
+
+    const games = filterGames.map(game => {
         return (
             <p key={game.id}>{game.game_name}</p>
         )
