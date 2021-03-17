@@ -49,6 +49,25 @@ const PlayPacketApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
+    },
+    postUserRule(rule_title, rule_description, game_id) {
+        return fetch(`${config.API_ENDPOINT}/games`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify({
+                rule_title,
+                rule_description,
+                game_id
+            }),
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
     }
 }
 
