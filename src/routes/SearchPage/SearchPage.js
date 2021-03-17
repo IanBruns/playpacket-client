@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function SearchPage(props) {
+    const [search, setSearch] = useState('');
     const [allGames, setAllGames] = useState([]);
     useEffect(() => {
         PlayPacketApiService.getAllGames()
@@ -22,7 +23,8 @@ export default function SearchPage(props) {
             <form className='game-search'>
                 <label htmlFor='game'>Seach by Game Name:</label>
                 <br />
-                <input type='text' name='game-search' />
+                <input type='text' placeholder="Enter Game" name='game-search'
+                    value={search} onChange={e => setSearch(e.target.value)} />
             </form>
             {games}
         </div>
