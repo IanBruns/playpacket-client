@@ -51,7 +51,7 @@ const PlayPacketApiService = {
             )
     },
     postUserRule(rule_title, rule_description, game_id) {
-        return fetch(`${config.API_ENDPOINT}/games`, {
+        return fetch(`${config.API_ENDPOINT}/rules`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -19,6 +19,7 @@ export default function GamesRulesPage(props) {
             })
     }, [props.match.params.gameId]);
 
+    const game_id = props.match.params.gameId;
     const mapRules = rules.map(rule => {
         return (
             <div className='rule' key={rule.id}>
@@ -28,17 +29,23 @@ export default function GamesRulesPage(props) {
         )
     })
 
+    function resetStates() {
+        setLoading(false);
+        setAdding(false);
+        setRule_title('');
+        setRule_description('');
+    }
+
     function handleRuleSubmit(e) {
         e.preventDefault();
         setLoading(true);
 
-        PlayPacketApiService.postUserRule(rule_title, rule_description, props.match.params.gameId)
+        PlayPacketApiService.postUserRule(rule_title, rule_description, game_id)
             .then(newRule => {
                 const addRule = rules;
                 addRule.push(newRule)
                 setRules(addRule);
-                setLoading(false)
-                setAdding(false);
+                resetStates();
             })
             .catch(err => {
                 setLoading(false)
