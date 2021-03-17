@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react'
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function GamesRulesPage(props) {
+    //form control
     const [loading, setLoading] = useState(false);
     const [adding, setAdding] = useState(false);
-
+    //For the Post requests
+    const [rule_title, setRule_title] = useState('');
+    const [rule_description, setRule_description] = useState('');
+    //Inital render
     const [name, setName] = useState('')
     const [rules, setRules] = useState([]);
     useEffect(() => {
