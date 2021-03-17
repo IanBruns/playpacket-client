@@ -30,7 +30,20 @@ export default function GamesRulesPage(props) {
 
     function handleRuleSubmit(e) {
         e.preventDefault();
-        console.log('boop');
+        setLoading(true);
+
+        PlayPacketApiService.postUserRule(rule_title, rule_description, props.match.params.gameId)
+            .then(newRule => {
+                const addRule = rules;
+                addRule.push(newRule)
+                setRules(addRule);
+                setLoading(false)
+                setAdding(false);
+            })
+            .catch(err => {
+                setLoading(false)
+                console.log(err);
+            })
     }
 
     return (
