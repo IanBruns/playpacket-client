@@ -10,7 +10,7 @@ function Header(props) {
 
     function handleLogoutClick() {
         TokenService.clearAuthToken();
-        setLoggedIn(false);
+        props.whenLoggedOut();
     }
 
     function renderLogoutLink() {
