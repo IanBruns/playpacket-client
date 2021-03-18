@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 
 function Header(props) {
+    const [loggedIn, setLoggedIn] = useState(props.isLoggedIn)
+    useEffect(() => {
+        setLoggedIn(props.isLoggedIn)
+    }, [props.isLoggedIn])
+
     function handleLogoutClick() {
         TokenService.clearAuthToken();
+        setLoggedIn(false);
     }
 
     function renderLogoutLink() {
@@ -41,7 +47,7 @@ function Header(props) {
                 <h1>Play Packet</h1>
             </Link>
 
-            {(props.isLoggedin === true)
+            {(loggedIn === true)
                 ? renderLogoutLink()
                 : renderLoginLink()}
         </nav>
