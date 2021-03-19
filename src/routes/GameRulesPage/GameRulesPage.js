@@ -15,7 +15,6 @@ export default function GamesRulesPage(props) {
     useEffect(() => {
         PlayPacketApiService.getGameName(props.match.params.gameId)
             .then(game => {
-                console.log(game);
                 setName(game.game_name);
             })
         PlayPacketApiService.getUserGameRules(props.match.params.gameId)
