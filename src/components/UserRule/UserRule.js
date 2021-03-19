@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import trash from '../../images/garbage.png'
 import edit from '../../images/edit.png'
+import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function UserRule(props) {
     const [editing, setEditing] = useState(false)
@@ -11,6 +12,11 @@ export default function UserRule(props) {
 
     const submitChanges = e => {
         e.preventDefault();
+        PlayPacketApiService.updateUserRule(props.id, editTitle, editDesc)
+            .then(() => {
+                setTitle(editTitle);
+                setDescription(editDesc);
+            })
     }
 
     function renderStaticItems() {
