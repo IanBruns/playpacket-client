@@ -4,6 +4,7 @@ import edit from '../../images/edit.png'
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function UserRule(props) {
+    const [loading, setLoading] = useState(false)
     const [editing, setEditing] = useState(false)
     const [title, setTitle] = useState(props.rule_title)
     const [description, setDescription] = useState(props.rule_description)
@@ -16,6 +17,12 @@ export default function UserRule(props) {
             .then(() => {
                 setTitle(editTitle);
                 setDescription(editDesc);
+                setLoading(false);
+                setEditing(false);
+            })
+            .catch(err => {
+                setLoading(false);
+                console.log(err);
             })
     }
 
@@ -37,8 +44,11 @@ export default function UserRule(props) {
                 <input type='text' placeholder={description} name='rule_description'
                     value={editDesc} onChange={e => setEditDesc(e.target.value)} />
                 <br />
-                <button type='submit'>
-                    Post
+                <button type="submit"
+                    disabled={loading}>
+                    {loading
+                        ? 'Woah, hang tight'
+                        : 'Submit!'}
                 </button>
             </form>
         )
