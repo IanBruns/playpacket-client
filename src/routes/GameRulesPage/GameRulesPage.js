@@ -13,10 +13,14 @@ export default function GamesRulesPage(props) {
     const [name, setName] = useState('')
     const [rules, setRules] = useState([]);
     useEffect(() => {
+        PlayPacketApiService.getGameName(props.match.params.gameId)
+            .then(game => {
+                console.log(game);
+                setName(game.game_name);
+            })
         PlayPacketApiService.getUserGameRules(props.match.params.gameId)
             .then(gameRules => {
                 setRules(gameRules);
-                setName(gameRules[0].game_name)
             })
     }, [props.match.params.gameId]);
 

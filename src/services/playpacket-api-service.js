@@ -50,6 +50,18 @@ const PlayPacketApiService = {
                     : res.json()
             )
     },
+    getGameName(game_id) {
+        return fetch(`${config.API_ENDPOINT}/games/${game_id}`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
     postUserRule(rule_title, rule_description, game_id) {
         return fetch(`${config.API_ENDPOINT}/rules`, {
             method: 'POST',

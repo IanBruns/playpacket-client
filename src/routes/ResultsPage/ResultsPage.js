@@ -6,10 +6,13 @@ export default function ResultsPage(props) {
     const [rules, setRules] = useState([]);
 
     useEffect(() => {
+        PlayPacketApiService.getGameName(props.match.params.gameId)
+            .then(game => {
+                setName(game.game_name);
+            })
         PlayPacketApiService.getSearchResults(props.match.params.gameId)
             .then(gameRules => {
                 setRules(gameRules);
-                setName(gameRules[0].game_name)
             })
     }, [props.match.params.gameId]);
 
