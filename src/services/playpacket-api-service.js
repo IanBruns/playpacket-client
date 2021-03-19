@@ -68,6 +68,19 @@ const PlayPacketApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
+    },
+    deleteUserRule(rule_id) {
+        return fetch(`${config.API_ENDPOINT}/rules/${rule_id}`, {
+            method: 'DELETE',
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : undefined
+            )
     }
 }
 
