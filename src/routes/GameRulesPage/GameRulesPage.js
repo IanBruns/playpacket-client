@@ -53,6 +53,10 @@ export default function GamesRulesPage(props) {
             })
     }
 
+    function handleDeleteClicked(game_id) {
+        console.log('clicked!')
+    }
+
     return (
         <div className='GamesRulesPage'>
             <h2>Rules For: {name}</h2>

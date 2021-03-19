@@ -13,9 +13,10 @@ import RulesPage from '../../routes/RulesPage/RulesPage';
 import GamesRulesPage from '../../routes/GameRulesPage/GameRulesPage';
 import SearchPage from '../../routes/SearchPage/SearchPage';
 import ResultsPage from '../../routes/ResultsPage/ResultsPage';
+import TokenService from '../../services/token-service';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(TokenService.hasAuthToken());
 
   function whenLoggedIn() {
     setIsLoggedIn(true);
