@@ -3,13 +3,13 @@ import SearchResultRule from '../../components/SearchResultRule/SearchResultRule
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function ResultsPage(props) {
-    const [name, setName] = useState('');
+    const [game, setGame] = useState({});
     const [rules, setRules] = useState([]);
 
     useEffect(() => {
         PlayPacketApiService.getGameName(props.match.params.gameId)
             .then(game => {
-                setName(game.game_name);
+                setGame(game);
             })
         PlayPacketApiService.getSearchResults(props.match.params.gameId)
             .then(gameRules => {
@@ -20,13 +20,13 @@ export default function ResultsPage(props) {
     const mapRules = rules.map(rule => {
         return (
             <SearchResultRule key={rule.id} title={rule.rule_title}
-                description={rule.rule_description} />
+                description={rule.rule_description} game_id={game.id} />
         )
     })
 
     return (
         <div className='GamesRulesPage'>
-            <h2>Rules For: {name}</h2>
+            <h2>Rules For: {game.game_name}</h2>
             {mapRules}
         </div>
     )

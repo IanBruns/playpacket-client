@@ -1,10 +1,18 @@
 import React from 'react';
 import add from '../../images/plus.png';
+import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function SearchResultRule(props) {
     const handleAddClicked = () => {
-        console.log('test')
+        PlayPacketApiService.postUserRule(props.title, props.description, props.game_id)
+            .then(() => {
+                console.log('Rule added!');
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
+
     return (
         <div className='rule'>
             <img src={add} alt='' height='25px'
