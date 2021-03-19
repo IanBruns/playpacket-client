@@ -13,7 +13,7 @@ export default function UserRule(props) {
 
     const submitChanges = e => {
         e.preventDefault();
-        PlayPacketApiService.updateUserRule(props.id, editTitle, editDesc)
+        PlayPacketApiService.updateUserRule(props.id, editDesc, editTitle)
             .then(() => {
                 setTitle(editTitle);
                 setDescription(editDesc);
@@ -38,9 +38,11 @@ export default function UserRule(props) {
     function renderEditItems() {
         return (
             <form onSubmit={e => submitChanges(e)}>
+                <label htmlFor='rule_title'>Title:</label>
                 <input type='text' placeholder={title} name='rule_title'
                     value={editTitle} onChange={e => setEditTitle(e.target.value)} />
                 <br />
+                <label htmlFor='rule_description'>Description:</label>
                 <input type='text' placeholder={description} name='rule_description'
                     value={editDesc} onChange={e => setEditDesc(e.target.value)} />
                 <br />
