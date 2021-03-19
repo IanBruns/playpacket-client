@@ -55,7 +55,14 @@ export default function GamesRulesPage(props) {
     }
 
     function handleDeleteClicked(rule_id) {
-        console.log({ rule_id })
+        PlayPacketApiService.deleteUserRule(rule_id)
+            .then(() => {
+                const filterRules = rules.filter(rule => rule.id !== rule_id)
+                setRules(filterRules);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     return (
