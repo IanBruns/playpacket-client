@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import RulesOptions from '../../components/RulesOptions/RulesOptions';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
@@ -23,6 +24,7 @@ export default function RulesPage(props) {
             <div className='gameSelect'>
                 {gameOptions}
             </div>
+            <p>Want to add a rule to a new game? <Link to='/'>Click here!</Link></p>
         </div>
     )
 }
