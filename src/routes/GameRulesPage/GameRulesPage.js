@@ -25,8 +25,7 @@ export default function GamesRulesPage(props) {
         return (
             <UserRule key={rule.id} id={rule.id}
                 rule_title={rule.rule_title}
-                rule_description={rule.rule_description}
-            />
+                rule_description={rule.rule_description} />
         )
     })
 
