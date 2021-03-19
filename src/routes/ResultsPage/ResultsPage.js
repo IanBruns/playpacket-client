@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PlayPacketApiService from '../../services/playpacket-api-service';
+import add from '../../images/plus.png'
 
 export default function ResultsPage(props) {
     const [name, setName] = useState('');
@@ -19,6 +20,7 @@ export default function ResultsPage(props) {
     const mapRules = rules.map(rule => {
         return (
             <div className='rule' key={rule.id}>
+                <img src={add} alt='' height='25px' />
                 <p>{rule.rule_title}</p>
                 <p>{rule.rule_description}</p>
             </div>
