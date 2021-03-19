@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import UserRule from '../../components/UserRule/UserRule';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function GamesRulesPage(props) {
@@ -22,10 +23,10 @@ export default function GamesRulesPage(props) {
     const game_id = props.match.params.gameId;
     const mapRules = rules.map(rule => {
         return (
-            <div className='rule' key={rule.id}>
-                <p>{rule.rule_title}</p>
-                <p>{rule.rule_description}</p>
-            </div>
+            <UserRule key={rule.id} id={rule.id}
+                rule_title={rule.rule_title}
+                rule_description={rule.rule_description}
+            />
         )
     })
 
