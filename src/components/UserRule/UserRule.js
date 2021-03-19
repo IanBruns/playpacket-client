@@ -9,6 +9,10 @@ export default function UserRule(props) {
     const [editTitle, setEditTitle] = useState(title);
     const [editDesc, setEditDesc] = useState(description);
 
+    const submitChanges = e => {
+        e.preventDefault();
+    }
+
     function renderStaticItems() {
         return (
             <>
@@ -20,17 +24,17 @@ export default function UserRule(props) {
 
     function renderEditItems() {
         return (
-            <>
+            <form onSubmit={e => submitChanges(e)}>
                 <input type='text' placeholder={title} name='rule_title'
                     value={editTitle} onChange={e => setEditTitle(e.target.value)} />
                 <br />
                 <input type='text' placeholder={description} name='rule_description'
                     value={editDesc} onChange={e => setEditDesc(e.target.value)} />
                 <br />
-                <button>
+                <button type='submit'>
                     Post
                 </button>
-            </>
+            </form>
         )
     }
 
