@@ -81,7 +81,25 @@ const PlayPacketApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : undefined
             )
-    }
+    },
+    updateUserRule(rule_id, rule_description, rule_title) {
+        return fetch(`${config.API_ENDPOINT}/rules/${rule_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify({
+                rule_title,
+                rule_description,
+            }),
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : undefined
+            )
+    },
 }
 
 export default PlayPacketApiService;
