@@ -7,7 +7,8 @@ export default function UserRule(props) {
         <div className='rule'>
             <p>{props.rule_title}</p>
             <p>{props.rule_description}</p>
-            <img src={trash} alt='delete' height='20px' />
+            <img src={trash} alt='delete' height='20px'
+                onClick={() => props.handleDeleteClicked(props.id)} />
             <img src={edit} alt='edit' height='20px' />
         </div>
     )

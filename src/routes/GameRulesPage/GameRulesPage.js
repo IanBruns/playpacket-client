@@ -20,21 +20,22 @@ export default function GamesRulesPage(props) {
             })
     }, [props.match.params.gameId]);
 
-    const game_id = props.match.params.gameId;
-    const mapRules = rules.map(rule => {
-        return (
-            <UserRule key={rule.id} id={rule.id}
-                rule_title={rule.rule_title}
-                rule_description={rule.rule_description} />
-        )
-    })
-
     function resetStates() {
         setLoading(false);
         setAdding(false);
         setRule_title('');
         setRule_description('');
     }
+
+    const game_id = props.match.params.gameId;
+    const mapRules = rules.map(rule => {
+        return (
+            <UserRule key={rule.id} id={rule.id}
+                rule_title={rule.rule_title}
+                rule_description={rule.rule_description}
+                handleDeleteClicked={handleDeleteClicked} />
+        )
+    })
 
     function handleRuleSubmit(e) {
         e.preventDefault();
@@ -53,8 +54,8 @@ export default function GamesRulesPage(props) {
             })
     }
 
-    function handleDeleteClicked(game_id) {
-        console.log('clicked!')
+    function handleDeleteClicked(rule_id) {
+        console.log({ rule_id })
     }
 
     return (
