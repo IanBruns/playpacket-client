@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import GameSearchSelect from '../../components/GameSearchSelect/GameSearchSelect';
+import RuleAddSelect from '../../components/RuleAddSelect/RuleAddSelect';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function SearchPage(props) {
@@ -16,12 +17,18 @@ export default function SearchPage(props) {
         return game.game_name.toLowerCase().includes(search.toLowerCase());
     })
 
-    const games = filterGames.map(game => {
-        return (
-            <GameSearchSelect key={game.id} id={game.id}
+    let games;
+    (props.searchType === 'Search')
+        ? games = filterGames.map(game => {
+            return (
+                <GameSearchSelect key={game.id} id={game.id}
+                    game_name={game.game_name} />
+            )
+        })
+        : games = filterGames.map(game => {
+            return <RuleAddSelect key={game.id} id={game.id}
                 game_name={game.game_name} />
-        )
-    })
+        })
 
     return (
         <div className='SearchPage'>
