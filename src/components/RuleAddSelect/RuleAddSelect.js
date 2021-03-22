@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PlayPacketApiService from '../../services/playpacket-api-service'
+import plus from '../../images/plus.png'
 
 export default function RuleAddSelect(props) {
     const [adding, setAdding] = useState(false);
@@ -12,8 +13,11 @@ export default function RuleAddSelect(props) {
         setLoading(true);
 
         PlayPacketApiService.postUserRule(rule_title, rule_description, props.game_id)
-            .then(newRule => {
-                //What do to after Rule posts
+            .then(() => {
+                setLoading(false);
+                setRule_description('');
+                setRule_title('');
+                setAdding(false);
             })
             .catch(err => {
                 setLoading(false)
@@ -24,6 +28,10 @@ export default function RuleAddSelect(props) {
     return (
         <div className='RuleAddSelect'>
             <p>{props.game_name}</p>
+
+            <img src={plus} alt='' height='25px'
+                onClick={() => setAdding(!adding)} />
+
             {adding && (
                 <form onSubmit={e => handleRuleSubmit(e)}>
                     <div className='form-options'>
