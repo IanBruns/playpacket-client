@@ -14,6 +14,7 @@ import GamesRulesPage from '../../routes/GameRulesPage/GameRulesPage';
 import SearchPage from '../../routes/SearchPage/SearchPage';
 import ResultsPage from '../../routes/ResultsPage/ResultsPage';
 import TokenService from '../../services/token-service';
+import AddNewRulePage from '../../routes/AddNewRulePage/AddNewRulePage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(TokenService.hasAuthToken());
@@ -67,6 +68,10 @@ function App() {
           <PrivateRoute
             path='/Results/:gameId'
             component={ResultsPage}
+          />
+          <PrivateRoute
+            path='/Add'
+            component={AddNewRulePage}
           />
           <Route
             component={NotFoundPage}
