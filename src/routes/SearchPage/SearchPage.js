@@ -26,7 +26,7 @@ export default function SearchPage(props) {
             )
         })
         : games = filterGames.map(game => {
-            return <RuleAddSelect key={game.id} id={game.id}
+            return <RuleAddSelect key={game.id} game_id={game.id}
                 game_name={game.game_name} />
         })
 
