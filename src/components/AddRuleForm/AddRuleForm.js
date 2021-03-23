@@ -10,12 +10,12 @@ export default function AddRuleForm(props) {
         e.preventDefault();
         setLoading(true);
 
-        PlayPacketApiService.postUserRule(rule_title, rule_description, game_id)
+        PlayPacketApiService.postUserRule(rule_title, rule_description, props.game_id)
             .then(newRule => {
-                const addRule = rules;
-                addRule.push(newRule)
-                setRules(addRule);
-                resetStates();
+                setLoading(false);
+                setRule_title('');
+                setRule_description('');
+                props.afterPost(newRule);
             })
             .catch(err => {
                 setLoading(false)
