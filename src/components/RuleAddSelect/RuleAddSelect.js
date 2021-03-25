@@ -13,7 +13,7 @@ export default function RuleAddSelect(props) {
         <div className='RuleAddSelect'>
             <p>{props.game_name}</p>
 
-            <img src={plus} alt='' height='25px'
+            <img className='click-icon' src={plus} alt='' height='25px'
                 onClick={() => setAdding(!adding)} />
 
             { adding && (

@@ -15,7 +15,7 @@ export default function SearchResultRule(props) {
 
     return (
         <div className='rule'>
-            <img src={add} alt='' height='25px'
+            <img className='click-icon' src={add} alt='' height='25px'
                 onClick={() => handleAddClicked()} />
             <p>{props.title}</p>
             <p>{props.description}</p>

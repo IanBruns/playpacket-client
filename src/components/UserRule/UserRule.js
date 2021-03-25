@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './UserRule.css'
 import trash from '../../images/garbage.png'
 import edit from '../../images/edit.png'
 import PlayPacketApiService from '../../services/playpacket-api-service';
@@ -29,7 +30,7 @@ export default function UserRule(props) {
     function renderStaticItems() {
         return (
             <>
-                <p>{title}</p>
+                <h3>{title}</h3>
                 <p>{description}</p>
             </>
         )
@@ -57,9 +58,9 @@ export default function UserRule(props) {
     return (
         <div className='rule'>
             <div className='icons'>
-                <img src={trash} alt='delete' height='20px'
+                <img className='click-icon' src={trash} alt='delete' height='20px'
                     onClick={() => props.handleDeleteClicked(props.id)} />
-                <img src={edit} alt='edit' height='20px'
+                <img className='click-icon' src={edit} alt='edit' height='20px'
                     onClick={() => setEditing(!editing)} />
             </div>
 
