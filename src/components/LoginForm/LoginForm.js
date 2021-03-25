@@ -52,8 +52,8 @@ export default function LoginForm(props) {
             <button type="submit" className='myButton'
                 disabled={loading}>
                 {loading
-                    ? 'loading'
-                    : 'login'}
+                    ? 'Loading'
+                    : 'Login'}
             </button>
         </form>
     )
