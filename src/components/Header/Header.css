@@ -6,3 +6,9 @@
 Header a {
     text-decoration: none;
 }
+
+
+.Header__not-logged-in, .Header__logged-in {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

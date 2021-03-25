@@ -33,15 +33,11 @@ function Header(props) {
     function renderLoginLink() {
         return (
             <div className='Header__not-logged-in'>
-                <img src={enter} alt='' height='50px' />
                 <div>
                     <Link
-                        to='/register'>
-                        Register
-                    </Link>
-                    <br />
-                    <Link
                         to='/login'>
+                        <img src={enter} alt='' height='50px' />
+                        <br />
                         Log in
                     </Link>
                 </div>
