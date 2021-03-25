@@ -1,4 +1,8 @@
 .App {
   text-align: center;
-  background-color: #D3D3D3;
 }
+
+.App a:link {color: black}
+.App a:visited{color:black}
+.App a:hover {color: #a714a2}
+.App a:active {color: #a714a2}
