@@ -1,6 +1,7 @@
 import React from 'react';
 import './LandingPage.css'
 import dice from '../../images/perspective-dice-six-faces-four.png'
+import { Link } from 'react-router-dom';
 
 export default function LandingPage(props) {
     return (
@@ -53,6 +54,13 @@ export default function LandingPage(props) {
                 <div className='right'>
                     <p>Other Screenshot?</p>
                 </div>
+            </div>
+
+            <div className='centered'>
+                <p>Ready to show Uno they can't boss us around?</p>
+                <Link to='/Register'>
+                    Let's get started!
+                </Link>
             </div>
         </div>
     )

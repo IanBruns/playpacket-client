@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import './Header.css';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
+import enter from '../../images/entry-door.png';
+import exit from '../../images/exit-door.png';
 
 function Header(props) {
     const [loggedIn, setLoggedIn] = useState(props.isLoggedIn)
@@ -19,8 +22,10 @@ function Header(props) {
                 <Link className='center'
                     onClick={handleLogoutClick}
                     to='/'>
-                    Logout
-                </Link>
+                    <img src={exit} alt='' height='50px' />
+                    <br />
+                        Logout
+                    </Link>
             </div>
         )
     }
@@ -28,15 +33,18 @@ function Header(props) {
     function renderLoginLink() {
         return (
             <div className='Header__not-logged-in'>
-                <Link
-                    to='/register'>
-                    Register
-                </Link>
-                <br />
-                <Link
-                    to='/login'>
-                    Log in
-                </Link>
+                <img src={enter} alt='' height='50px' />
+                <div>
+                    <Link
+                        to='/register'>
+                        Register
+                    </Link>
+                    <br />
+                    <Link
+                        to='/login'>
+                        Log in
+                    </Link>
+                </div>
             </div>
         )
     }
