@@ -7,8 +7,11 @@ Header a {
     text-decoration: none;
 }
 
+h1 {
+    font-size: 50px;
+}
 
 .Header__not-logged-in, .Header__logged-in {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    font-size: 20px;
 }

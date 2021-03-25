@@ -31,7 +31,7 @@ export default function LoginForm(props) {
             })
     }
     return (
-        <form className='sign-in-form'
+        <form className='sign-up-form'
             onSubmit={(e) => handleSubmitJwtAuth(e)}
         >
             {error &&

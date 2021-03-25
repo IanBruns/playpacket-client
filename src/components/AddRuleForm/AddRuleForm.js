@@ -24,7 +24,7 @@ export default function AddRuleForm(props) {
     }
 
     return (
-        <form onSubmit={e => handleRuleSubmit(e)}>
+        <form className='sign-up-form' onSubmit={e => handleRuleSubmit(e)}>
             <div className='form-options'>
                 <label htmlFor='rule_title'>Rule Title</label>
                 <br />
