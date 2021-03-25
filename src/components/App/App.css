@@ -1,8 +1,12 @@
+header {
+  background-color: blueviolet;
+}
+
 .App {
   text-align: center;
 }
 
 .App a:link {color: black}
 .App a:visited{color:black}
-.App a:hover {color: #a714a2}
-.App a:active {color: #a714a2}
+.App a:hover {color: white}
+.App a:active {color:white}
