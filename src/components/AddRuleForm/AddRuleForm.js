@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddRuleForm.css'
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function AddRuleForm(props) {
@@ -24,7 +25,7 @@ export default function AddRuleForm(props) {
     }
 
     return (
-        <form className='sign-up-form' onSubmit={e => handleRuleSubmit(e)}>
+        <form className='AddRuleForm' onSubmit={e => handleRuleSubmit(e)}>
             <div className='form-options'>
                 <label htmlFor='rule_title'>Rule Title</label>
                 <br />
@@ -34,11 +35,11 @@ export default function AddRuleForm(props) {
             <div className='form-options'>
                 <label htmlFor='rule_description'>Rule Description*</label>
                 <br />
-                <input type='text' placeholder='Enter Rule Description'
+                <textarea placeholder='Enter Rule Description'
                     name='rule_description' required
                     value={rule_description} onChange={e => setRule_description(e.target.value)} />
             </div>
-            <button type="submit" className='myButton'
+            <button type="submit"
                 disabled={loading}>
                 {loading
                     ? 'Hang Tight'
