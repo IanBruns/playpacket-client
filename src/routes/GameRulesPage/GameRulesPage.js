@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './GameRulesPage.css'
 import AddRuleForm from '../../components/AddRuleForm/AddRuleForm';
 import SideBar from '../../components/SideBar/SideBar';
 import UserRule from '../../components/UserRule/UserRule';
@@ -49,12 +50,12 @@ export default function GamesRulesPage(props) {
 
     return (
         <div className='GamesRulesPage'>
-            <h2>Rules For: {name}</h2>
             <div className='content'>
                 <div className='Sidebar'>
                     <SideBar />
                 </div>
                 <div className='userRules'>
+                    <h2>Rules For: {name}</h2>
                     {mapRules}
 
                     <button onClick={() => setAdding(!adding)}>
