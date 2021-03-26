@@ -68,8 +68,6 @@ export default function GamesRulesPage(props) {
                 )}
                 <div className='userRules'>
                     <h2>Rules For: {name}</h2>
-                    {mapRules}
-
                     <button onClick={() => setAdding(!adding)}>
                         Add
                     </button>
@@ -78,6 +76,7 @@ export default function GamesRulesPage(props) {
                         <AddRuleForm game_id={props.match.params.gameId}
                             afterPost={(newRule) => afterPost(newRule)} />
                     )}
+                    {mapRules}
                 </div>
             </div>
         </div>
