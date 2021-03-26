@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import './ResultsPage.css'
 import SearchResultRule from '../../components/SearchResultRule/SearchResultRule';
 import SideBar from '../../components/SideBar/SideBar';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function ResultsPage(props) {
+    const isDesktop = useMediaQuery({ minDeviceWidth: 800 })
     const [game, setGame] = useState({});
     const [rules, setRules] = useState([]);
 
@@ -29,11 +32,20 @@ export default function ResultsPage(props) {
     return (
         <div className='GamesRulesPage'>
             <div className='content'>
-                <div className='Sidebar results'>
-                    <SideBar category='search'
-                        goBack={props.history.goBack} />
-                </div>
+                {isDesktop && (
+                    <div className='Sidebar results'>
+                        <SideBar category='search'
+                            goBack={props.history.goBack} />
+                    </div>
+                )}
                 <div className='userRules'>
+                    {!isDesktop && (
+                        <Link to='/Search'>
+                            <button>
+                                Back to search
+                            </button>
+                        </Link>
+                    )}
                     <h2>Rules For: {game.game_name}</h2>
                     {mapRules}
                 </div>
