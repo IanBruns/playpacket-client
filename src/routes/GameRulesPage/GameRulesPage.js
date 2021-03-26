@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useMediaQuery } from 'react-responsive';
 import './GameRulesPage.css'
 import AddRuleForm from '../../components/AddRuleForm/AddRuleForm';
 import SideBar from '../../components/SideBar/SideBar';
@@ -6,6 +7,7 @@ import UserRule from '../../components/UserRule/UserRule';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function GamesRulesPage(props) {
+    const isDesktop = useMediaQuery({ minDeviceWidth: 800 })
     //form control
     const [adding, setAdding] = useState(false);
     //Inital render
@@ -51,10 +53,12 @@ export default function GamesRulesPage(props) {
     return (
         <div className='GamesRulesPage'>
             <div className='content'>
-                <div className='Sidebar'>
-                    <SideBar category='usersgames'
-                        goBack={props.history.goBack} />
-                </div>
+                {isDesktop && (
+                    <div className='Sidebar'>
+                        <SideBar category='usersgames'
+                            goBack={props.history.goBack} />
+                    </div>
+                )}
                 <div className='userRules'>
                     <h2>Rules For: {name}</h2>
                     {mapRules}
