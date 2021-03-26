@@ -59,7 +59,7 @@ export default function UserRule(props) {
     return (
         <div className='rule'>
             <div className='icons'>
-                <img className='click-icon' src={trash} alt='delete' height='20px'
+                <img className='click-icon delete' src={trash} alt='delete' height='20px'
                     onClick={() => props.handleDeleteClicked(props.id)} />
                 <img className='click-icon' src={edit} alt='edit' height='20px'
                     onClick={() => setEditing(!editing)} />

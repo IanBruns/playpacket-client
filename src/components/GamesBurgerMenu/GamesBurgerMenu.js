@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { slide as Menu } from 'react-burger-menu';
+import { Link } from 'react-router-dom'
 import './GamesBurgerMenu.css'
 import PlayPacketApiService from '../../services/playpacket-api-service';
 import RulesOptions from '../RulesOptions/RulesOptions'
@@ -20,7 +21,12 @@ export default function GamesBurgerMenu(props) {
 
     return (
         <Menu>
+            <Link to='/MyRules'>
+                <button>
+                    Back
+                </button>
+            </Link>
             {gamesButtons}
-        </Menu>
+        </Menu >
     )
 }

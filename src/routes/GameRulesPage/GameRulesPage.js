@@ -54,8 +54,10 @@ export default function GamesRulesPage(props) {
     return (
         <div className='GamesRulesPage'>
             {!isDesktop && (
-                <GamesBurgerMenu isOpen={false} category='usersgames'
-                    goBack={props.history.goBack} />
+                <div className='burger'>
+                    <GamesBurgerMenu isOpen={false} category='usersgames'
+                        goBack={props.history.goBack} />
+                </div>
             )}
             <div className='content'>
                 {isDesktop && (
