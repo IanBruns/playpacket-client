@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import plus from '../../images/plus.png';
+import minus from '../../images/minus.png';
 import AddRuleForm from '../AddRuleForm/AddRuleForm'
 
 export default function RuleAddSelect(props) {
@@ -9,12 +10,21 @@ export default function RuleAddSelect(props) {
         setAdding(false);
     }
 
+    let imgSrc;
+
+    (adding === false)
+        ? imgSrc = plus
+        : imgSrc = minus;
+
+
     return (
         <div className='RuleAddSelect'>
-            <p>{props.game_name}</p>
+            <div className='flex'>
+                <h4>{props.game_name}</h4>
 
-            <img className='click-icon' src={plus} alt='' height='25px'
-                onClick={() => setAdding(!adding)} />
+                <img className='click-icon' src={imgSrc} alt='' height='30px'
+                    onClick={() => setAdding(!adding)} />
+            </div>
 
             { adding && (
                 <AddRuleForm game_id={props.game_id}

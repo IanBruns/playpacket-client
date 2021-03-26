@@ -1,4 +1,4 @@
-header, button, h2, h3{
+header, button, h2, h3, h4{
   font-family: 'Caveat', cursive;
 }
 
@@ -8,6 +8,10 @@ header, .Sidebar {
 
 h2 {
   font-size: 40px;
+}
+
+h4 {
+  font-size: 25px;
 }
 
 button {
