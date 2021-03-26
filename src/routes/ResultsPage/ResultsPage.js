@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchResultRule from '../../components/SearchResultRule/SearchResultRule';
+import SideBar from '../../components/SideBar/SideBar';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function ResultsPage(props) {
@@ -26,8 +27,16 @@ export default function ResultsPage(props) {
 
     return (
         <div className='GamesRulesPage'>
-            <h2>Rules For: {game.game_name}</h2>
-            {mapRules}
+            <div className='content'>
+                <div className='Sidebar'>
+                    <SideBar category='search'
+                        goBack={props.history.goBack} />
+                </div>
+                <div className='userRules'>
+                    <h2>Rules For: {game.game_name}</h2>
+                    {mapRules}
+                </div>
+            </div>
         </div>
     )
 }

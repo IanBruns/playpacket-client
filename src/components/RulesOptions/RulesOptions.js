@@ -7,7 +7,7 @@ export default function RulesOptions(props) {
         <>
             <Link to={`/Rules/${props.id}`}>
                 <button className='games-button'>
-                    <span>{props.name}</span>
+                    {props.name}
                 </button>
             </Link>
             {props.break && <br />}

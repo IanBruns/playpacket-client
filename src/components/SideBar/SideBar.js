@@ -6,17 +6,40 @@ import RulesOptions from '../RulesOptions/RulesOptions'
 export default function SideBar(props) {
     const [games, setGames] = useState([]);
     useEffect(() => {
-        PlayPacketApiService.getUserGames()
-            .then(userGames => {
-                setGames(userGames);
-            })
-    }, [])
+        if (props.category === 'search') {
+            PlayPacketApiService.getAllGames()
+                .then(results => {
+                    setGames(results);
+                })
+        } else {
+            PlayPacketApiService.getUserGames()
+                .then(userGames => {
+                    setGames(userGames);
+                })
+        }
+    }, [props.category])
 
-    const gamesButtons = games.map(game => {
-        return (
-            <RulesOptions key={game.id} id={game.id} name={game.game_name} break={true} />
-        )
-    })
+    let gamesButtons
+
+    if (props.category === 'usersgames') {
+        gamesButtons = games.map(game => {
+            return (
+                <RulesOptions key={game.id} id={game.id} name={game.game_name} break={true} />
+            )
+        })
+    } else {
+        gamesButtons = games.map(game => {
+            return (
+                <div key={game.id}>
+                    <Link to={`Results/${game.id}`}>
+                        <button>
+                            {game.game_name}
+                        </button>
+                    </Link>
+                </div>
+            )
+        })
+    }
 
     return (
         <React.Fragment>
@@ -25,11 +48,14 @@ export default function SideBar(props) {
             </button>
             <br />
             {gamesButtons}
-            <Link to='/Add'>
-                <button>
-                    Add
+
+            {props.category === 'usersgames' && (
+                <Link to='/Add'>
+                    <button>
+                        Add Game
                 </button>
-            </Link>
+                </Link>
+            )}
         </React.Fragment>
     )
 }
