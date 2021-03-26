@@ -27,60 +27,61 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header
-          whenLoggedOut={whenLoggedOut}
-          isLoggedIn={isLoggedIn}
-        />
-      </header>
-      <main>
-        <Switch>
-          <Route
-            exact path='/'
-            component={LandingPage}
+    <>
+      <div className="App">
+        <header className="App-header">
+          <Header
+            whenLoggedOut={whenLoggedOut}
+            isLoggedIn={isLoggedIn}
           />
-          <PublicOnlyRoute
-            path='/Login'
-            component={LoginPage}
-            whenLoggedIn={whenLoggedIn}
-          />
-          <PublicOnlyRoute
-            path='/Register'
-            component={RegistrationPage}
-          />
-          <PrivateRoute
-            path='/Home'
-            component={HomePage}
-          />
-          <PrivateRoute
-            path='/MyRules'
-            component={RulesPage} />
-          <PrivateRoute
-            path='/Rules/:gameId'
-            component={GamesRulesPage}
-          />
-          <PrivateRoute
-            path='/Search'
-            component={SearchPage}
-            searchType='Search'
-          />
-          <PrivateRoute
-            path='/Results/:gameId'
-            component={ResultsPage}
-          />
-          <PrivateRoute
-            path='/Add'
-            component={SearchPage}
-            searchType='Add'
-          />
-          <Route
-            component={NotFoundPage}
-          />
-        </Switch>
-      </main>
-
-    </div>
+        </header>
+        <main>
+          <Switch>
+            <Route
+              exact path='/'
+              component={LandingPage}
+            />
+            <PublicOnlyRoute
+              path='/Login'
+              component={LoginPage}
+              whenLoggedIn={whenLoggedIn}
+            />
+            <PublicOnlyRoute
+              path='/Register'
+              component={RegistrationPage}
+            />
+            <PrivateRoute
+              path='/Home'
+              component={HomePage}
+            />
+            <PrivateRoute
+              path='/MyRules'
+              component={RulesPage} />
+            <PrivateRoute
+              path='/Rules/:gameId'
+              component={GamesRulesPage}
+            />
+            <PrivateRoute
+              path='/Search'
+              component={SearchPage}
+              searchType='Search'
+            />
+            <PrivateRoute
+              path='/Results/:gameId'
+              component={ResultsPage}
+            />
+            <PrivateRoute
+              path='/Add'
+              component={SearchPage}
+              searchType='Add'
+            />
+            <Route
+              component={NotFoundPage}
+            />
+          </Switch>
+        </main>
+      </div>
+    </>
   );
 }
 

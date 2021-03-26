@@ -19,24 +19,12 @@ export default function SideBar(props) {
         }
     }, [props.category])
 
-    let gamesButtons
+    let gamesButtons;
 
     if (props.category === 'usersgames') {
         gamesButtons = games.map(game => {
             return (
                 <RulesOptions key={game.id} id={game.id} name={game.game_name} break={true} />
-            )
-        })
-    } else {
-        gamesButtons = games.map(game => {
-            return (
-                <div key={game.id}>
-                    <Link to={`Results/${game.id}`}>
-                        <button>
-                            {game.game_name}
-                        </button>
-                    </Link>
-                </div>
             )
         })
     }
@@ -49,11 +37,18 @@ export default function SideBar(props) {
             <br />
             {gamesButtons}
 
+            {props.category === 'search' && (
+                <Link to='/Search'>
+                    <button>
+                        All Games
+                    </button>
+                </Link>
+            )}
             {props.category === 'usersgames' && (
                 <Link to='/Add'>
                     <button>
                         Add Game
-                </button>
+                    </button>
                 </Link>
             )}
         </React.Fragment>

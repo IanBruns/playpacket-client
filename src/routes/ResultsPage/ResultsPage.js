@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './ResultsPage.css'
 import SearchResultRule from '../../components/SearchResultRule/SearchResultRule';
 import SideBar from '../../components/SideBar/SideBar';
 import PlayPacketApiService from '../../services/playpacket-api-service';
@@ -28,7 +29,7 @@ export default function ResultsPage(props) {
     return (
         <div className='GamesRulesPage'>
             <div className='content'>
-                <div className='Sidebar'>
+                <div className='Sidebar results'>
                     <SideBar category='search'
                         goBack={props.history.goBack} />
                 </div>
