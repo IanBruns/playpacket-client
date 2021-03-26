@@ -5,6 +5,7 @@ import AddRuleForm from '../../components/AddRuleForm/AddRuleForm';
 import SideBar from '../../components/SideBar/SideBar';
 import UserRule from '../../components/UserRule/UserRule';
 import PlayPacketApiService from '../../services/playpacket-api-service';
+import GamesBurgerMenu from '../../components/GamesBurgerMenu/GamesBurgerMenu';
 
 export default function GamesRulesPage(props) {
     const isDesktop = useMediaQuery({ minDeviceWidth: 800 })
@@ -52,6 +53,10 @@ export default function GamesRulesPage(props) {
 
     return (
         <div className='GamesRulesPage'>
+            {!isDesktop && (
+                <GamesBurgerMenu isOpen={false} category='usersgames'
+                    goBack={props.history.goBack} />
+            )}
             <div className='content'>
                 {isDesktop && (
                     <div className='Sidebar'>
