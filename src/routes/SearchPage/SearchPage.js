@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './SearchPage.css';
 import GameSearchSelect from '../../components/GameSearchSelect/GameSearchSelect';
 import RuleAddSelect from '../../components/RuleAddSelect/RuleAddSelect';
 import PlayPacketApiService from '../../services/playpacket-api-service';
@@ -32,11 +33,9 @@ export default function SearchPage(props) {
 
     return (
         <div className='SearchPage'>
-            <h2>SearchPage!</h2>
+            <h2>What game are you looking for?</h2>
             <form className='game-search'>
-                <label htmlFor='game'>Seach by Game Name:</label>
-                <br />
-                <input type='text' placeholder="Enter Game" name='game-search'
+                <input type='text' placeholder="Search by Name" name='game-search'
                     value={search} onChange={e => setSearch(e.target.value)} />
             </form>
             {games}
