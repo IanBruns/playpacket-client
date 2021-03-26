@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+}
+
+.sidebar{
+    flex: 1;
+}
+
+.userRules {
+    flex: 3;
+}
+
+@media all and (min-width: 800px) {
+
+}
