@@ -14,6 +14,7 @@ export default function UserRule(props) {
 
     const submitChanges = e => {
         e.preventDefault();
+        setLoading(true);
         PlayPacketApiService.updateUserRule(props.id, editDesc, editTitle)
             .then(() => {
                 setTitle(editTitle);
