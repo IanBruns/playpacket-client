@@ -1,6 +1,7 @@
 .Header {
     display: flex;
     justify-content: space-evenly;
+    border-bottom: 1px solid black;
 }
 
 Header a {
