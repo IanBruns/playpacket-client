@@ -21,6 +21,11 @@ export default function SideBar(props) {
     return (
         <React.Fragment>
             {gamesButtons}
+            <Link to='/Add'>
+                <button>
+                    Add
+                </button>
+            </Link>
         </React.Fragment>
     )
 }

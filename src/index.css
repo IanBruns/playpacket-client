@@ -12,3 +12,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html, body, #root, .App, main, .GamesRulesPage, .content { height:100%; }
