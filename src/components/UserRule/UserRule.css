@@ -2,6 +2,10 @@
     font-size: 25px;
 }
 
+.rule p {
+    font-family: 'Philosopher', sans-serif;
+}
+
 .rule .icons {
     position: absolute;
     top: 5px;

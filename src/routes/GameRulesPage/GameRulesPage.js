@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import AddRuleForm from '../../components/AddRuleForm/AddRuleForm';
+import SideBar from '../../components/SideBar/SideBar';
 import UserRule from '../../components/UserRule/UserRule';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
@@ -49,16 +50,23 @@ export default function GamesRulesPage(props) {
     return (
         <div className='GamesRulesPage'>
             <h2>Rules For: {name}</h2>
-            {mapRules}
+            <div className='content'>
+                <div className='Sidebar'>
+                    <SideBar />
+                </div>
+                <div className='userRules'>
+                    {mapRules}
 
-            <button onClick={() => setAdding(!adding)}>
-                Add
-            </button>
+                    <button onClick={() => setAdding(!adding)}>
+                        Add
+                    </button>
 
-            {adding && (
-                <AddRuleForm game_id={props.match.params.gameId}
-                    afterPost={(newRule) => afterPost(newRule)} />
-            )}
+                    {adding && (
+                        <AddRuleForm game_id={props.match.params.gameId}
+                            afterPost={(newRule) => afterPost(newRule)} />
+                    )}
+                </div>
+            </div>
         </div>
     )
 }
