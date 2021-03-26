@@ -17,6 +17,7 @@
 .Sidebar button {
     padding: 25px 40px;
     margin: 10px 10px;
+    width: 200px;
 }
 
 .burger button {
