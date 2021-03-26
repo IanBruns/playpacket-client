@@ -6,12 +6,7 @@ import RulesOptions from '../RulesOptions/RulesOptions'
 export default function SideBar(props) {
     const [games, setGames] = useState([]);
     useEffect(() => {
-        if (props.category === 'search') {
-            PlayPacketApiService.getAllGames()
-                .then(results => {
-                    setGames(results);
-                })
-        } else {
+        if (props.category === 'usersgames') {
             PlayPacketApiService.getUserGames()
                 .then(userGames => {
                     setGames(userGames);
