@@ -52,7 +52,7 @@ export default function GamesRulesPage(props) {
         <div className='GamesRulesPage'>
             <div className='content'>
                 <div className='Sidebar'>
-                    <SideBar />
+                    <SideBar goBack={props.history.goBack} />
                 </div>
                 <div className='userRules'>
                     <h2>Rules For: {name}</h2>

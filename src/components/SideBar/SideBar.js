@@ -20,6 +20,10 @@ export default function SideBar(props) {
 
     return (
         <React.Fragment>
+            <button onClick={props.goBack}>
+                Back
+            </button>
+            <br />
             {gamesButtons}
             <Link to='/Add'>
                 <button>
