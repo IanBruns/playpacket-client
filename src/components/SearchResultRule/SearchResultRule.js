@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SearchResultRule.css'
 import add from '../../images/plus.png';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
@@ -20,10 +21,12 @@ export default function SearchResultRule(props) {
 
     return (
         <div className='rule'>
-            <img className='click-icon' src={add} alt='' height='25px'
-                onClick={() => handleAddClicked()} />
+            {!message && (
+                <img className='click-icon' src={add} alt='' height='25px'
+                    onClick={() => handleAddClicked()} />
+            )}
             {message && (
-                <p>Rule has been added to your collection!</p>
+                <p className='red'>Rule has been added to your collection!</p>
             )}
             <h3>{props.title}</h3>
             <p>{props.description}</p>
