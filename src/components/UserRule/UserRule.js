@@ -11,9 +11,11 @@ export default function UserRule(props) {
     const [description, setDescription] = useState(props.rule_description)
     const [editTitle, setEditTitle] = useState(title);
     const [editDesc, setEditDesc] = useState(description);
+    const [error, setError] = useState(null);
 
     const submitChanges = e => {
         e.preventDefault();
+        setError(null);
         setLoading(true);
         PlayPacketApiService.updateUserRule(props.id, editDesc, editTitle)
             .then(() => {
@@ -23,8 +25,8 @@ export default function UserRule(props) {
                 setEditing(false);
             })
             .catch(err => {
+                setError(err)
                 setLoading(false);
-                console.log(err);
             })
     }
 
@@ -39,20 +41,25 @@ export default function UserRule(props) {
 
     function renderEditItems() {
         return (
-            <form onSubmit={e => submitChanges(e)}>
-                <input type='text' placeholder={title} name='rule_title'
-                    value={editTitle} onChange={e => setEditTitle(e.target.value)} />
-                <br />
-                <input type='text' placeholder={description} name='rule_description'
-                    value={editDesc} onChange={e => setEditDesc(e.target.value)} />
-                <br />
-                <button type="submit"
-                    disabled={loading}>
-                    {loading
-                        ? 'Woah, hang tight'
-                        : 'Submit!'}
-                </button>
-            </form>
+            <>
+                {error && (
+                    <p>{error}</p>
+                )}
+                <form onSubmit={e => submitChanges(e)}>
+                    <input type='text' placeholder={title} name='rule_title'
+                        value={editTitle} onChange={e => setEditTitle(e.target.value)} />
+                    <br />
+                    <input type='text' placeholder={description} name='rule_description'
+                        value={editDesc} onChange={e => setEditDesc(e.target.value)} />
+                    <br />
+                    <button type="submit"
+                        disabled={loading}>
+                        {loading
+                            ? 'Woah, hang tight'
+                            : 'Submit!'}
+                    </button>
+                </form>
+            </>
         )
     }
 
