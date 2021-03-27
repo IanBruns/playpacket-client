@@ -26,62 +26,73 @@ function App() {
     setIsLoggedIn(false);
   }
 
+  window.onscroll = function () { lockHeader() };
+
+  var header = document.getElementById("myHeader");
+  var sticky = header.offsetTop;
+
+  function lockHeader() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+
   return (
-    <>
-      <div className="App">
-        <header className="App-header">
-          <Header
-            whenLoggedOut={whenLoggedOut}
-            isLoggedIn={isLoggedIn}
+    <div className="App">
+      <header className="App-header" id='myHeader'>
+        <Header
+          whenLoggedOut={whenLoggedOut}
+          isLoggedIn={isLoggedIn}
+        />
+      </header>
+      <main>
+        <Switch>
+          <Route
+            exact path='/'
+            component={LandingPage}
           />
-        </header>
-        <main>
-          <Switch>
-            <Route
-              exact path='/'
-              component={LandingPage}
-            />
-            <PublicOnlyRoute
-              path='/Login'
-              component={LoginPage}
-              whenLoggedIn={whenLoggedIn}
-            />
-            <PublicOnlyRoute
-              path='/Register'
-              component={RegistrationPage}
-            />
-            <PrivateRoute
-              path='/Home'
-              component={HomePage}
-            />
-            <PrivateRoute
-              path='/MyRules'
-              component={RulesPage} />
-            <PrivateRoute
-              path='/Rules/:gameId'
-              component={GamesRulesPage}
-            />
-            <PrivateRoute
-              path='/Search'
-              component={SearchPage}
-              searchType='Search'
-            />
-            <PrivateRoute
-              path='/Results/:gameId'
-              component={ResultsPage}
-            />
-            <PrivateRoute
-              path='/Add'
-              component={SearchPage}
-              searchType='Add'
-            />
-            <Route
-              component={NotFoundPage}
-            />
-          </Switch>
-        </main>
-      </div>
-    </>
+          <PublicOnlyRoute
+            path='/Login'
+            component={LoginPage}
+            whenLoggedIn={whenLoggedIn}
+          />
+          <PublicOnlyRoute
+            path='/Register'
+            component={RegistrationPage}
+          />
+          <PrivateRoute
+            path='/Home'
+            component={HomePage}
+          />
+          <PrivateRoute
+            path='/MyRules'
+            component={RulesPage} />
+          <PrivateRoute
+            path='/Rules/:gameId'
+            component={GamesRulesPage}
+          />
+          <PrivateRoute
+            path='/Search'
+            component={SearchPage}
+            searchType='Search'
+          />
+          <PrivateRoute
+            path='/Results/:gameId'
+            component={ResultsPage}
+          />
+          <PrivateRoute
+            path='/Add'
+            component={SearchPage}
+            searchType='Add'
+          />
+          <Route
+            component={NotFoundPage}
+          />
+        </Switch>
+      </main>
+    </div>
   );
 }
 
