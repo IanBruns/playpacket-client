@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './RegistrationForm.css'
 import AuthApiService from '../../services/auth-api-service';
 
 export default function RegistrationForm(props) {
