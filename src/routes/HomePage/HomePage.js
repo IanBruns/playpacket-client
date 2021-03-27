@@ -10,7 +10,7 @@ export default function HomePage(props) {
             <div className='MyRules'>
                 <h3>My Rules</h3>
                 <p>Here's where we have stored your rules</p>
-                <p>Select a game (We'll oinly display games you have rules for)</p>
+                <p>Select a game (We'll only display games you have rules for)</p>
                 <p>You can view and add rules to all games as well</p>
                 <Link to='/MyRules'>
                     <button>

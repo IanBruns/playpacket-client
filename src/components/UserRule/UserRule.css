@@ -30,3 +30,12 @@
 .icons .delete {
     margin-right: 40px;
 }
+
+.post-rule-form textarea {
+    width: 60%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+}

@@ -45,11 +45,11 @@ export default function UserRule(props) {
                 {error && (
                     <p>{error}</p>
                 )}
-                <form onSubmit={e => submitChanges(e)}>
+                <form className='post-rule-form' onSubmit={e => submitChanges(e)}>
                     <input type='text' placeholder={title} name='rule_title'
                         value={editTitle} onChange={e => setEditTitle(e.target.value)} />
                     <br />
-                    <input type='text' placeholder={description} name='rule_description'
+                    <textarea placeholder={description} name='rule_description'
                         value={editDesc} onChange={e => setEditDesc(e.target.value)} />
                     <br />
                     <button type="submit"
