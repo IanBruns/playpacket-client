@@ -27,7 +27,7 @@ export default function LoginForm(props) {
             })
             .catch(err => {
                 setLoading(false);
-                setError(err);
+                setError(err.error);
             })
     }
     return (
@@ -36,7 +36,7 @@ export default function LoginForm(props) {
         >
             {error &&
                 (
-                    <p>There was an error</p>
+                    <p>{error}</p>
                 )}
             <div className='form-options'>
                 <label htmlFor='user_name'>Username</label>

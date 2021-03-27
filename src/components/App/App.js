@@ -26,10 +26,10 @@ function App() {
     setIsLoggedIn(false);
   }
 
-  window.onscroll = function () { lockHeader() };
+  let header = document.getElementById("myHeader");
+  let sticky = header.offsetTop;
 
-  var header = document.getElementById("myHeader");
-  var sticky = header.offsetTop;
+  window.onscroll = function () { lockHeader() };
 
   function lockHeader() {
     if (window.pageYOffset > sticky) {
