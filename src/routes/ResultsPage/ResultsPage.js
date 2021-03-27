@@ -46,7 +46,7 @@ export default function ResultsPage(props) {
                             </button>
                         </Link>
                     )}
-                    <h2>Rules For: {game.game_name}</h2>
+                    <h2>Search Results For: {game.game_name}</h2>
                     {mapRules}
                 </div>
             </div>
