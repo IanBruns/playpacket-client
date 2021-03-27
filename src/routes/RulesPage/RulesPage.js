@@ -20,7 +20,7 @@ export default function RulesPage(props) {
 
     return (
         <div className='RulesPage'>
-            <h2>RulesPage!</h2>
+            <h2>Which game are you looking for?</h2>
             <div className='gameSelect'>
                 {gameOptions}
             </div>
