@@ -19,7 +19,15 @@ export default function HomePage(props) {
                 </Link>
             </div>
             <div className='search'>
-
+                <h3>Search</h3>
+                <p>Want to see what other users have created?</p>
+                <p>Even better, want to <span>ADD</span> those rules?</p>
+                <p>Don't worry, we got you covered</p>
+                <Link to='/Search'>
+                    <button>
+                        Search
+                    </button>
+                </Link>
             </div>
         </div>
     )
