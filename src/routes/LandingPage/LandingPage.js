@@ -1,6 +1,6 @@
 import React from 'react';
 import './LandingPage.css'
-import dice from '../../images/perspective-dice-six-faces-four.png'
+import dice from '../../images/icons/perspective-dice-six-faces-four.png'
 import { Link } from 'react-router-dom';
 
 export default function LandingPage(props) {

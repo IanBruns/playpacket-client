@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
-import enter from '../../images/entry-door.png';
-import exit from '../../images/exit-door.png';
+import enter from '../../images/icons/entry-door.png';
+import exit from '../../images/icons/exit-door.png';
 
 function Header(props) {
     const [loggedIn, setLoggedIn] = useState(props.isLoggedIn)

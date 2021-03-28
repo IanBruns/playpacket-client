@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import plus from '../../images/plus.png';
-import minus from '../../images/minus.png';
+import plus from '../../images/icons/plus.png';
+import minus from '../../images/icons/minus.png';
 import AddRuleForm from '../AddRuleForm/AddRuleForm'
 
 export default function RuleAddSelect(props) {

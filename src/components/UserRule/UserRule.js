@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './UserRule.css'
-import trash from '../../images/garbage.png'
-import edit from '../../images/edit.png'
+import trash from '../../images/icons/garbage.png'
+import edit from '../../images/icons/edit.png'
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function UserRule(props) {

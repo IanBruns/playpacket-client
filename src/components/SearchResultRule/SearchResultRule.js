@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SearchResultRule.css'
-import add from '../../images/plus.png';
+import add from '../../images/icons/plus.png';
 import PlayPacketApiService from '../../services/playpacket-api-service';
 
 export default function SearchResultRule(props) {
