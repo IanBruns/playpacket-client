@@ -27,19 +27,6 @@ function App() {
     setIsLoggedIn(false);
   }
 
-  let header = document.getElementById("myHeader");
-  let sticky = header.offsetTop;
-
-  window.onscroll = function () { lockHeader() };
-
-  function lockHeader() {
-    if (window.pageYOffset > sticky) {
-      header.classList.add("sticky");
-    } else {
-      header.classList.remove("sticky");
-    }
-  }
-
   return (
     <div className="App">
       <header className="App-header" id='myHeader'>

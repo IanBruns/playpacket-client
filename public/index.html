@@ -42,5 +42,19 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
+<script>
+  let header = document.getElementById("myHeader");
+  let sticky = header.offsetTop;
+
+  window.onscroll = function () { lockHeader() };
+
+  function lockHeader() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+</script>
 
 </html>
