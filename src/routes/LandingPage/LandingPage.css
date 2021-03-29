@@ -10,6 +10,9 @@ span {
     justify-content: space-evenly;
     flex-direction: column;
 }
+.bullet img {
+    margin-top: 10px;
+}
 
 @media all and (min-width: 800px) {
     .container {
