@@ -10,7 +10,7 @@ export default function LandingPage(props) {
             <h2>Welcome to Play Packet!</h2>
             <div className='container'>
                 <div className='left'>
-                    <img src={pizza} alt='' height='700px' />
+                    <img src={pizza} alt='' height='300px' />
                 </div>
                 <div className='right'>
                     <div className='bullet'>
