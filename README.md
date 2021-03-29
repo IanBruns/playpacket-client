@@ -2,13 +2,11 @@
 
 https://playpacket.vercel.app/
 
-## Screenshots
+## Screenshot
 
-![Homepage](/src/images/home.png)
+![Mobie View](/src/images/screenshots/mobile.png)
 
-![Workout-list](/src/images/exercises.png)
-
-![Manage-Workouts](/src/images/manage.png)
+![Desktop View](/src/images/screenshots/desktop.png)
 
 ## SUMMARY
 
