@@ -2,7 +2,6 @@ import React from 'react';
 import './LandingPage.css'
 import dice from '../../images/icons/perspective-dice-six-faces-four.png'
 import pizza from '../../images/photos/pizza.jpg';
-import scrabble from '../../images/photos/scrabble.jpg'
 import { Link } from 'react-router-dom';
 
 export default function LandingPage(props) {
