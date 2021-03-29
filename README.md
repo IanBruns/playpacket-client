@@ -1,4 +1,4 @@
-# RIGHT ROUTINE
+# Play Packet
 
 https://playpacket.vercel.app/
 
