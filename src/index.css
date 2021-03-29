@@ -13,4 +13,6 @@ code {
     monospace;
 }
 
-html, body, #root, .App, main, .GamesRulesPage, .content { height: 100%; }
+@media all and (min-width: 800px) {
+  html, body, #root, .App, main, .GamesRulesPage, .content { height: 100%; }
+}
