@@ -2,6 +2,7 @@ import React from 'react';
 import './LandingPage.css'
 import pizza from '../../images/photos/pizza.jpg';
 import { Link } from 'react-router-dom';
+import LandingBullets from '../../components/LandingBullets/LandingBullets';
 
 export default function LandingPage(props) {
     return (
@@ -12,7 +13,7 @@ export default function LandingPage(props) {
                     <img src={pizza} alt='' height='300px' />
                 </div>
                 <div className='right'>
-                    <LandingPage />
+                    <LandingBullets />
                 </div>
             </div>
             <div className='centered'>
