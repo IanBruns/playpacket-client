@@ -10,7 +10,7 @@ export default function LandingPage(props) {
             <h2>Welcome to Play Packet!</h2>
             <div className='container'>
                 <div className='left'>
-                    <img src={pizza} alt='' height='300px' />
+                    <img src={pizza} alt='' height='400px' />
                 </div>
                 <div className='right'>
                     <LandingBullets />
@@ -18,6 +18,8 @@ export default function LandingPage(props) {
             </div>
             <div className='centered'>
                 <p>Ready to show Uno they can't boss us around?</p>
+                <p>Then Sign up, and Either make your own rules</p>
+                <p>Or search and copy what our other users have been doing!</p>
                 <Link to='/Register'>
                     Let's get started!
                 </Link>
