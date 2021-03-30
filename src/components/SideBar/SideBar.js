@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './SideBar.css'
 import PlayPacketApiService from '../../services/playpacket-api-service';
 import RulesOptions from '../RulesOptions/RulesOptions'
 
