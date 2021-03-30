@@ -4,6 +4,7 @@ header, button, h2, h3, h4{
 
 header, footer, .Sidebar {
   background-color: #555380;
+  color: white;
 }
 
 footer{
@@ -51,10 +52,10 @@ button:hover {
   text-align: center;
 }
 
-.App a:link {color: black}
-.App a:visited{color:black}
-.App a:hover {color: white}
-.App a:active {color:white}
+.App a:link {color: white}
+.App a:visited{color:white}
+.App a:hover {color: #57FF73}
+.App a:active {color:#57FF73}
 
 .sign-up-form {
   font-family: Arial, Helvetica, sans-serif;
