@@ -9,27 +9,27 @@ export default function LandingBullets(props) {
                 <p>
                     Did you know that it's against the rules of Uno to stack
                     draw 2's on top of each other?
-                        </p>
+                </p>
             </div>
             <div className='bullet'>
                 <img src={dice} alt='' height='30px' />
                 <p>
                     Crazy Right?!?  We think so
-                        </p>
+                </p>
             </div>
             <div className='bullet'>
                 <img src={dice} alt='' height='30px' />
                 <p>
                     Here at Play Packet, you can create your OWN House Rules and share them
                     with everyone else
-                        </p>
+                </p>
             </div>
             <div className='bullet'>
                 <img src={dice} alt='' height='30px' />
                 <p>
                     So Log in/get signed up, and show people the real way play settlers of catan
                     or whatever
-                        </p>
+                </p>
             </div>
             <div className='bullet'>
                 <img src={dice} alt='' height='30px' />
